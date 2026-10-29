@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const apiUrl = process.env.API_URL ?? "http://localhost:8080";
-
 const legacyModuleRedirects = [
   ["solicitudes", "prestamos"],
   ["vigentes", "prestamos"],
@@ -43,14 +41,7 @@ const nextConfig: NextConfig = {
       })),
     ];
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: `${apiUrl}/api/:path*`,
-      },
-    ];
-  },
+  // /api/* lo proxya src/app/api/[...path]/route.ts con process.env.API_URL (runtime Coolify).
   // Solo globals.css pasa por Tailwind. Si se aplica a *.module.css,
   // Turbopack elimina las clases del módulo y el layout se rompe.
   turbopack: {
