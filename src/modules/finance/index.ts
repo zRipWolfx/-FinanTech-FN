@@ -1,0 +1,15 @@
+export { ModuleView } from "./ModuleView";
+export { ParametrosPage } from "./ParametrosPage";
+export { SolicitudesPage } from "./SolicitudesPage";
+export { VigentesPage } from "./VigentesPage";
+export { CronogramasPage } from "./CronogramasPage";
+export { RegistrarPagoPage } from "./RegistrarPagoPage";
+export { CuotasPage } from "./CuotasPage";
+export { MoraPage } from "./MoraPage";
+export { CarteraClientesPage } from "./CarteraClientesPage";
+export { ConsultaDniPage } from "./ConsultaDniPage";
+export { VencimientosPage } from "./VencimientosPage";
+export { GestionesPage } from "./GestionesPage";
+export { ReporteCarteraPage, ReporteCobranzaPage } from "./ReportesPages";
+export { ClientBlankPage } from "./ClientBlankPage";
+export { FinanceModulePage } from "./FinanceModulePage";

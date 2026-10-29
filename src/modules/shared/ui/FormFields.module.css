@@ -1,0 +1,93 @@
+.underline {
+  width: 100%;
+  border: 0 !important;
+  border-radius: 0 !important;
+  border-bottom: 1.5px solid #cbd5e1 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0.45rem 0.1rem 0.5rem;
+  color: inherit;
+  font: inherit;
+  min-height: 2.5rem;
+  transition: border-color 0.15s ease, border-bottom-width 0.15s ease;
+}
+
+.underline:focus,
+.underline:focus-visible {
+  border-bottom-color: #2563eb !important;
+  border-bottom-width: 2px !important;
+}
+
+.underline::placeholder {
+  color: #94a3b8;
+}
+
+.selectUnderline {
+  width: 100%;
+  border: 0 !important;
+  border-radius: 0 !important;
+  border-bottom: 1.5px solid #cbd5e1 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0.45rem 1.4rem 0.5rem 0.1rem;
+  color: inherit;
+  font: inherit;
+  min-height: 2.5rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #64748b 50%),
+    linear-gradient(135deg, #64748b 50%, transparent 50%);
+  background-position:
+    calc(100% - 12px) calc(50% + 2px),
+    calc(100% - 7px) calc(50% + 2px);
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+  transition: border-color 0.15s ease, border-bottom-width 0.15s ease;
+}
+
+.selectUnderline:focus,
+.selectUnderline:focus-visible {
+  border-bottom-color: #2563eb !important;
+  border-bottom-width: 2px !important;
+}
+
+.passwordWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-bottom: 1.5px solid #cbd5e1;
+  transition: border-color 0.15s ease, border-bottom-width 0.15s ease;
+}
+
+.passwordWrap:focus-within {
+  border-bottom-color: #2563eb;
+  border-bottom-width: 2px;
+}
+
+.passwordWrap .underline {
+  border-bottom: 0 !important;
+  min-height: 2.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.labelRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+:global([data-theme="dark"]) .underline,
+:global([data-theme="dark"]) .passwordWrap {
+  border-bottom-color: rgba(148, 163, 184, 0.45) !important;
+  color: #e8eef8;
+}
+
+:global([data-theme="dark"]) .underline:focus,
+:global([data-theme="dark"]) .underline:focus-visible,
+:global([data-theme="dark"]) .passwordWrap:focus-within {
+  border-bottom-color: #60a5fa !important;
+}

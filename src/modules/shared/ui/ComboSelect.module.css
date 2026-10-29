@@ -1,0 +1,164 @@
+.root {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 2.35rem;
+  margin: 0;
+  padding: 0.35rem 0.55rem 0.35rem 0.65rem;
+  border: 1px solid var(--line, #d7e3ef);
+  border-radius: var(--radius-control, 12px);
+  background: #fff;
+  color: #0f172a;
+  font-size: 0.8rem;
+  font-weight: 650;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.14s ease, box-shadow 0.14s ease;
+}
+
+.trigger[data-size="sm"] {
+  min-height: 1.9rem;
+  padding: 0.2rem 0.4rem 0.2rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.trigger[data-tone="success"] {
+  color: #15803d;
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.trigger[data-tone="muted"] {
+  color: #64748b;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.trigger:hover {
+  border-color: #93c5fd;
+  background: var(--panel-strong, #e6f8ff);
+}
+
+.trigger[data-open="true"],
+.trigger:focus-visible {
+  border-color: var(--accent, #0066ff);
+  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.14);
+}
+
+.value {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.chevron {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+  color: #64748b;
+}
+
+.menu {
+  position: fixed;
+  z-index: 10060;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  border: 1px solid var(--line, #d7e3ef);
+  border-radius: 0;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(10, 37, 64, 0.12);
+  max-height: min(14rem, 50vh);
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.55rem 0.65rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #0f172a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.option:hover,
+.option:focus-visible {
+  background: #eff6ff;
+  color: #1d4ed8;
+  outline: none;
+}
+
+.option[data-active="true"] {
+  background: var(--accent, #0066ff);
+  color: #fff;
+}
+
+.option[data-active="true"]:hover,
+.option[data-active="true"]:focus-visible {
+  background: var(--accent-strong, #0099ff);
+  color: #fff;
+}
+
+:global([data-theme="dark"]) .trigger {
+  background: #121b2b;
+  border-color: #334155;
+  color: #e8eef8;
+}
+
+:global([data-theme="dark"]) .trigger[data-tone="success"] {
+  background: rgba(22, 163, 74, 0.16);
+  border-color: rgba(134, 239, 172, 0.35);
+  color: #86efac;
+}
+
+:global([data-theme="dark"]) .trigger[data-tone="muted"] {
+  background: rgba(148, 163, 184, 0.08);
+  border-color: rgba(148, 163, 184, 0.25);
+  color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .menu {
+  background: #0b1220;
+  border-color: #e2e8f0;
+  color: #e2e8f0;
+}
+
+:global([data-theme="dark"]) .option {
+  color: #e2e8f0;
+}
+
+:global([data-theme="dark"]) .option:hover,
+:global([data-theme="dark"]) .option:focus-visible {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+}

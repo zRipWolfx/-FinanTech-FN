@@ -1,0 +1,124 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn {
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-control, 12px);
+  background: transparent;
+  color: #475569;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: color 0.14s ease, transform 0.14s ease;
+}
+
+.btn:hover:not(:disabled),
+.btn:focus-visible {
+  color: #1d4ed8;
+  background: transparent;
+  outline: none;
+  transform: scale(1.08);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn[data-tone="danger"] {
+  color: #b91c1c;
+}
+
+.btn[data-tone="danger"]:hover:not(:disabled),
+.btn[data-tone="danger"]:focus-visible {
+  color: #991b1b;
+}
+
+.btn[data-tone="primary"] {
+  color: #1d4ed8;
+}
+
+.btn[data-tone="primary"]:hover:not(:disabled),
+.btn[data-tone="primary"]:focus-visible {
+  color: #1e40af;
+}
+
+.btn svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
+}
+
+.tipFixed {
+  position: fixed;
+  z-index: 10050;
+  width: max-content;
+  max-width: min(15rem, calc(100vw - 1.5rem));
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius-control, 12px);
+  background: #fff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: left;
+  pointer-events: none;
+  white-space: normal;
+  transform: translate(-50%, -100%);
+}
+
+.tipFixed[data-align="left"] {
+  transform: translate(0, -100%);
+}
+
+.tipFixed[data-align="right"] {
+  transform: translate(-100%, -100%);
+}
+
+.tipFixed[data-align="center"] {
+  transform: translate(-50%, -100%);
+}
+
+@media (hover: none) {
+  .tipFixed {
+    display: none;
+  }
+}
+
+:global([data-theme="dark"]) .btn {
+  color: #94a3b8;
+  background: transparent;
+  border: 0;
+}
+
+:global([data-theme="dark"]) .btn:hover:not(:disabled),
+:global([data-theme="dark"]) .btn:focus-visible {
+  color: #93c5fd;
+}
+
+:global([data-theme="dark"]) .btn[data-tone="danger"] {
+  color: #fecaca;
+}
+
+:global([data-theme="dark"]) .btn[data-tone="primary"] {
+  color: #93c5fd;
+}
+
+:global([data-theme="dark"]) .tipFixed {
+  background: #0b1220;
+  color: #e2e8f0;
+  border-color: #243044;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+}

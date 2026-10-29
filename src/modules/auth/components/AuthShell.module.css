@@ -1,0 +1,63 @@
+.shell {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background-color: #e8eef8;
+  background-image:
+    linear-gradient(rgba(31, 91, 216, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 91, 216, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.frame {
+  width: min(100%, 440px);
+  padding: 1.6rem;
+  border-radius: 1.35rem;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(20, 40, 90, 0.12);
+  color: #1c2430;
+}
+
+.header {
+  display: grid;
+  gap: 0.65rem;
+  margin-bottom: 1.35rem;
+}
+
+.kicker {
+  margin: 0;
+  color: #1f5bd8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-space), sans-serif;
+  font-size: clamp(1.55rem, 4vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.copy {
+  margin: 0;
+  color: #7a8699;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.footer {
+  margin-top: 1.15rem;
+  color: #7a8699;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #1f5bd8;
+  font-weight: 700;
+}

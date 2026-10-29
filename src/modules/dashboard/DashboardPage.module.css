@@ -1,0 +1,403 @@
+.page {
+  display: grid;
+  gap: 0.85rem;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  background: var(--panel, #fff);
+  border: 1px solid var(--line, #d7e3ef);
+  box-shadow: 0 8px 24px rgba(20, 40, 80, 0.04);
+  min-width: 0;
+}
+
+.profileCopy {
+  min-width: 0;
+}
+
+.square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 800;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.online {
+  position: absolute;
+  right: -0.1rem;
+  bottom: -0.1rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: #22c55e;
+  border: 2px solid #fff;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 750;
+  color: var(--foreground, #0a2540);
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.pillBlue {
+  color: #2563eb;
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.pillGreen {
+  color: #16a34a;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.role {
+  margin: 0.28rem 0 0;
+  color: #64748b;
+  font-size: 0.82rem;
+}
+
+.refresh {
+  border: 1px solid var(--line, #d7e3ef);
+  background: #fff;
+  color: #0a2540;
+  border-radius: 12px;
+  min-height: 2.45rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.refresh:hover:not(:disabled) {
+  border-color: #93c5fd;
+  background: #e6f8ff;
+}
+
+.refresh:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.charts,
+.chartsSecond,
+.clientGrid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.95fr;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.chartsSecond {
+  grid-template-columns: 1fr;
+  max-width: 36rem;
+}
+
+.clientGrid {
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.panel,
+.panelWide {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem 1.05rem 0.85rem;
+  border-radius: 16px;
+  background: var(--panel, #fff);
+  border: 1px solid var(--line, #d7e3ef);
+  box-shadow: 0 8px 24px rgba(20, 40, 80, 0.04);
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.panelHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 750;
+  color: var(--foreground, #0a2540);
+}
+
+.panelSub {
+  margin: 0.22rem 0 0;
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.tabs {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.15rem;
+  border-radius: 12px;
+  background: #f1f5f9;
+  flex-shrink: 0;
+}
+
+.tab,
+.tabOn {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.32rem 0.6rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  background: transparent;
+  color: #64748b;
+  min-height: 2rem;
+}
+
+.tabOn {
+  background: #fff;
+  color: #2563eb;
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.chartBox {
+  width: 100%;
+  height: 240px;
+  min-width: 0;
+}
+
+.chartBoxTall {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  min-width: 0;
+}
+
+.donutLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+}
+
+.donutCenter {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.donutKicker {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.donutPct {
+  margin: 0.1rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--foreground, #0a2540);
+  line-height: 1.1;
+}
+
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.legendItem {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.45rem;
+  align-items: center;
+  font-size: 0.78rem;
+  min-width: 0;
+}
+
+.swatch {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 0.2rem;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  color: #475569;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.legendMeta {
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.tooltip {
+  background: #fff;
+  border: 1px solid var(--line, #d7e3ef);
+  border-radius: 12px;
+  padding: 0.55rem 0.7rem;
+  box-shadow: 0 12px 28px rgba(10, 37, 64, 0.12);
+  max-width: 14rem;
+}
+
+.tooltipLabel {
+  margin: 0 0 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.tooltipRow {
+  margin: 0.15rem 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: #0a2540;
+}
+
+.tooltipRow span {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 0.15rem;
+  flex-shrink: 0;
+}
+
+.empty {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.shortcuts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.shortcut {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 14px;
+  border: 1px solid var(--line, #d7e3ef);
+  background: #f8fbfe;
+  text-decoration: none;
+  color: inherit;
+  min-height: 4.2rem;
+  transition: border-color 0.14s ease, background 0.14s ease;
+}
+
+.shortcut:hover {
+  border-color: #93c5fd;
+  background: #e6f8ff;
+}
+
+.shortcut strong {
+  font-size: 0.88rem;
+  font-weight: 750;
+  color: var(--foreground, #0a2540);
+}
+
+.shortcut span {
+  font-size: 0.74rem;
+  color: #64748b;
+}
+
+.legendHint {
+  margin-top: 0.35rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--line, #d7e3ef);
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.legendHint strong {
+  color: var(--foreground, #0a2540);
+}
+
+@media (max-width: 1100px) {
+  .charts,
+  .chartsSecond,
+  .clientGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .profile {
+    grid-template-columns: auto 1fr;
+  }
+
+  .refresh {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 2.75rem;
+  }
+
+  .donutLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .chartBox,
+  .chartBoxTall {
+    height: 220px;
+  }
+
+  .panelHead {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tabs {
+    align-self: flex-start;
+  }
+}

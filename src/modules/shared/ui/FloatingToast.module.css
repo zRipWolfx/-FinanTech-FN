@@ -1,0 +1,78 @@
+.host {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11000;
+  display: grid;
+  gap: 0.45rem;
+  width: min(22rem, calc(100vw - 1.5rem));
+  max-width: calc(100vw - 1.5rem);
+  pointer-events: none;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.toast {
+  pointer-events: none;
+  margin: 0;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #fff;
+  color: #0f172a;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.16);
+  text-align: center;
+  will-change: transform, opacity;
+}
+
+.toast[data-tone="success"] {
+  border-color: #86efac;
+  color: #166534;
+  background: #f0fdf4;
+}
+
+.toast[data-tone="error"] {
+  border-color: #fca5a5;
+  color: #b91c1c;
+  background: #fef2f2;
+}
+
+.toast[data-tone="info"] {
+  border-color: #93c5fd;
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+:global([data-theme="dark"]) .toast {
+  background: #0b1220;
+  color: #e2e8f0;
+  border-color: #243044;
+}
+
+:global([data-theme="dark"]) .toast[data-tone="success"] {
+  background: #123226;
+  color: #bbf7d0;
+  border-color: #166534;
+}
+
+:global([data-theme="dark"]) .toast[data-tone="error"] {
+  background: #3a1720;
+  color: #fecaca;
+  border-color: #7f1d1d;
+}
+
+:global([data-theme="dark"]) .toast[data-tone="info"] {
+  background: #172554;
+  color: #bfdbfe;
+  border-color: #1e3a8a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    will-change: auto;
+  }
+}
