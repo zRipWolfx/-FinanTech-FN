@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        API_URL: ${API_URL:-https://api.finan.mtasoftware.cloud}
+        API_URL: ${API_URL:-https://app.mtasoftware.cloud}
     ports:
       - "3000:3000"
     environment:
