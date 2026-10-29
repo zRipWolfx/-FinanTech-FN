@@ -11,18 +11,21 @@ async function proxy(req: NextRequest, ctx: { params: Promise<{ path: string[] }
   const { path } = await ctx.params;
   const target = `${backendBase()}/api/${path.map(encodeURIComponent).join("/")}${req.nextUrl.search}`;
 
+  // No reenviar Origin/Referer: el proxy es server-to-server y evita 403 CORS del backend.
   const headers = new Headers();
   const auth = req.headers.get("authorization");
   if (auth) headers.set("authorization", auth);
   const contentType = req.headers.get("content-type");
   if (contentType) headers.set("content-type", contentType);
-  const cookie = req.headers.get("cookie");
-  if (cookie) headers.set("cookie", cookie);
+  const accept = req.headers.get("accept");
+  if (accept) headers.set("accept", accept);
+  headers.set("user-agent", "FinanTech-Frontend-Proxy");
 
   const init: RequestInit = {
     method: req.method,
     headers,
     redirect: "manual",
+    cache: "no-store",
   };
 
   if (req.method !== "GET" && req.method !== "HEAD") {
