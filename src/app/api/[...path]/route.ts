@@ -1,13 +1,13 @@
+import { connection } from "next/server";
 import { NextRequest, NextResponse } from "next/server";
-
-export const dynamic = "force-dynamic";
-export const runtime = "nodejs";
 
 function backendBase() {
   return (process.env.API_URL ?? "http://localhost:8080").replace(/\/$/, "");
 }
 
 async function proxy(req: NextRequest, ctx: { params: Promise<{ path: string[] }> }) {
+  await connection();
+
   const { path } = await ctx.params;
   const target = `${backendBase()}/api/${path.map(encodeURIComponent).join("/")}${req.nextUrl.search}`;
 
